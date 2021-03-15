@@ -1,0 +1,31 @@
+Cpp program using graphics.h header file to move car
+
+#include<graphics.h>
+
+#include<conio.h>
+
+#include<dos.h>
+
+void main() { int gd=DETECT,gm; initgraph(&gd,&gm,"c:\turboc3\bgi");
+
+//rectangle
+
+setcolor(4);
+
+for(int i=0;(i<500 && !kbhit());i++)
+
+{ rectangle(30+i,200,150+i,250); setfillstyle(1,14); floodfill(31+i,201,4); rectangle(120+i,210,140+i,230); setfillstyle(10,9); floodfill(121+i,211,4);
+
+//tires
+
+circle(40+i,260,10); setfillstyle(1,5); floodfill(40+i,260,4); circle(140+i,260,10); setfillstyle(1,5); floodfill(140+i,260,4);
+
+//road
+
+line(0,270,800,270); delay(30); cleardevice();
+
+}
+
+getch(); closegraph();
+
+}
